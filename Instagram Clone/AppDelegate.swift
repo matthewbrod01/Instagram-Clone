@@ -27,11 +27,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
         
-        // Create a notification observer
+        // Create a notification observer for Logging Out
         NotificationCenter.default.addObserver(forName: Notification.Name("didLogout"), object: nil, queue: OperationQueue.main) { (Notification) in
             print("Logout notification received")
             // TODO: Logout the User
             // TODO: Load and show the login view controller
+        }
+        
+        // Check if user is logged in for persisting user session
+        if PFUser.current() != nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // view controller currently being set in Storyboard as default will be overridden
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            
+            // persisting user session only shows a white screen
+            // might be because HomeVC has a navigation controller
+            // this shows navigation controller on top of HomeVC
+            let navigationVC = UINavigationController(rootViewController: homeVC)
+            self.window?.rootViewController = navigationVC
+            
+            
         }
         
         return true

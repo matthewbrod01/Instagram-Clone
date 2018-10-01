@@ -77,7 +77,7 @@
         <!--HomeVC-->
         <scene sceneID="wq8-Fm-Rhx">
             <objects>
-                <viewController id="zic-0y-Wcy" customClass="HomeVC" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zic-0y-Wcy" customClass="HomeVC" customModule="Instagram_Clone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybC-X8-uvb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

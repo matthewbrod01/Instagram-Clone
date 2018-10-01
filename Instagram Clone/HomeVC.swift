@@ -26,7 +26,8 @@ class HomeVC: UIViewController {
         // Post a notification when user taps logout button
         NotificationCenter.default.post(name: NSNotification.Name("didLogout"), object: nil)
         
-        // clears current user and takes user back to LoginVC
+        // clears current user cache and takes user back to LoginVC
+        // PFUser.current() will now be nil
         PFUser.logOutInBackground(block: { (error) in
             if let error = error {
                 print(error.localizedDescription)
