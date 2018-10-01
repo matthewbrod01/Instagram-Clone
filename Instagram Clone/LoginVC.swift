@@ -13,11 +13,22 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // set rounded corners for login fields
+        usernameField.layer.cornerRadius = 5
+        usernameField.clipsToBounds = true
+        passwordField.layer.cornerRadius = 5
+        passwordField.clipsToBounds = true
+        signInButton.layer.cornerRadius = 5
+        signInButton.clipsToBounds = true
+        signUpButton.layer.cornerRadius = 5
+        signUpButton.clipsToBounds = true
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +41,8 @@ class LoginVC: UIViewController {
             if user != nil {
                 print("Logged in.")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            } else {
+                print(error?.localizedDescription as Any)
             }
         }
     }

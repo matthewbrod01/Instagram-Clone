@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		341831092162C5E900596EF4 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 341831082162C5E900596EF4 /* Billabong.ttf */; };
+		3418310C2162E18D00596EF4 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3418310B2162E18D00596EF4 /* HomeVC.swift */; };
 		3427B8612161A09A0065E713 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427B8602161A09A0065E713 /* AppDelegate.swift */; };
 		3427B8662161A09A0065E713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3427B8642161A09A0065E713 /* Main.storyboard */; };
 		3427B8682161A09C0065E713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3427B8672161A09C0065E713 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		341831082162C5E900596EF4 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
+		3418310B2162E18D00596EF4 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3427B85D2161A0990065E713 /* Instagram Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Instagram Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3427B8602161A09A0065E713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3427B8652161A09A0065E713 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,12 +103,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3418310A2162C60800596EF4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				341831082162C5E900596EF4 /* Billabong.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3427B8542161A0990065E713 = {
 			isa = PBXGroup;
 			children = (
 				3427B85F2161A0990065E713 /* Instagram Clone */,
 				3427B8742161A09C0065E713 /* Instagram CloneTests */,
 				3427B87F2161A09D0065E713 /* Instagram CloneUITests */,
+				3418310A2162C60800596EF4 /* Fonts */,
 				3427B85E2161A0990065E713 /* Products */,
 				EDFE3D2C39C2BD078A96C651 /* Pods */,
 				2B53507DEDF3FC5B3AC96895 /* Frameworks */,
@@ -130,6 +143,7 @@
 				3427B8692161A09C0065E713 /* LaunchScreen.storyboard */,
 				3427B86C2161A09C0065E713 /* Info.plist */,
 				3427B88E2161AADC0065E713 /* LoginVC.swift */,
+				3418310B2162E18D00596EF4 /* HomeVC.swift */,
 			);
 			path = "Instagram Clone";
 			sourceTree = "<group>";
@@ -276,6 +290,7 @@
 				3427B86B2161A09C0065E713 /* LaunchScreen.storyboard in Resources */,
 				3427B8682161A09C0065E713 /* Assets.xcassets in Resources */,
 				3427B8662161A09A0065E713 /* Main.storyboard in Resources */,
+				341831092162C5E900596EF4 /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3418310C2162E18D00596EF4 /* HomeVC.swift in Sources */,
 				3427B8612161A09A0065E713 /* AppDelegate.swift in Sources */,
 				3427B88F2161AADC0065E713 /* LoginVC.swift in Sources */,
 			);
