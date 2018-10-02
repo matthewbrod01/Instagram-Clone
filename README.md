@@ -61,7 +61,17 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Describe any challenges encountered while building the app:
+
+User persistence has been implemented in code. App delegate presents both HomeVC and
+navigation controller on app restarts.
+
+However, when a tab bar controller is added on top of navigation controller, persistence doesn't show
+HomeVC with nav bar and tab bar on app restart. Unable to implement app delegate to include both
+the tab bar and the navigation bar. This causes the log out button to disappear.
+
+Hence, user persistence is temporarily commented out to proceed with completing up the remaining
+required user stories.
 
 ## License
 
