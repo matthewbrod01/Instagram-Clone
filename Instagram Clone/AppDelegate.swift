@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // Initialize Parse (Link with Heroku)
@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // TODO: Load and show the login view controller
         }
         
+        
+        /* CODE BLOCK BELOW IS COMMENTED OUT TEMPORARILY.
+           UNSURE HOW TO PORTRAY BOTH TAB BAR CONTROLLER AND NAV CONTROLLER
+           ON APP RESTARTS.
+         
         // Check if user is logged in for persisting user session
         if PFUser.current() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -46,8 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let navigationVC = UINavigationController(rootViewController: homeVC)
             self.window?.rootViewController = navigationVC
             
-            
         }
+ 
+        */
         
         return true
     }
