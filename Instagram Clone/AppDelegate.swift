@@ -35,25 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
-        /* CODE BLOCK BELOW IS COMMENTED OUT TEMPORARILY.
-           UNSURE HOW TO PORTRAY BOTH TAB BAR CONTROLLER AND NAV CONTROLLER
-           ON APP RESTARTS.
-         
         // Check if user is logged in for persisting user session
         if PFUser.current() != nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             // view controller currently being set in Storyboard as default will be overridden
-            let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-            
-            // persisting user session only shows a white screen
-            // might be because HomeVC has a navigation controller
-            // this shows navigation controller on top of HomeVC
-            let navigationVC = UINavigationController(rootViewController: homeVC)
-            self.window?.rootViewController = navigationVC
-            
+            let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+            self.window?.rootViewController = tabBar
+            print("Welcome back \(PFUser.current()!.username ?? "")")
         }
- 
-        */
         
         return true
     }

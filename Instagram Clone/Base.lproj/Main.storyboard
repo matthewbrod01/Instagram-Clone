@@ -94,7 +94,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="476.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ou-he-aK7">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7ou-he-aK7" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -215,7 +215,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="9NE-nc-8bb">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="C01-bV-RPH" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="C01-bV-RPH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aDM-WI-O0o">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

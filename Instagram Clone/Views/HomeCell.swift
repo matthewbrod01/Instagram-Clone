@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
 class HomeCell: UITableViewCell {
 
-    @IBOutlet weak var feedImageView: UIImageView!
+    @IBOutlet weak var feedImageView: PFImageView!
     @IBOutlet weak var feedCaptionLabel: UILabel!
+    
+    /*
+    var instagramPost: PFObject! {
+        didSet {
+            self.feedImageView.file = instagramPost["media"] as? PFFile
+            self.feedCaptionLabel.text = instagramPost["caption"] as? String
+            self.feedImageView.loadInBackground()
+        }
+    }
+    */
     
     override func awakeFromNib() {
         super.awakeFromNib()

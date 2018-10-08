@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -23,6 +24,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         tableView.rowHeight = 500
         
+        fetchData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +49,9 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         query?.findObjectsInBackground(block: { (postsFromBackground, error) in
             if let postsFromBackground = postsFromBackground {
                 self.posts = postsFromBackground
-                print(postsFromBackground)
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription as Any)
             }
         })
         
@@ -75,8 +79,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // tableview protocol
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: return something.count
-        return 1
+        return posts.count
     }
     
     // tableview protocol
@@ -84,7 +87,17 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeCell
         
         // TODO: set cell properties, link image and caption field
-        
+        //let user = posts[indexPath.row]["author"] as! PFUser
+        if(posts.isEmpty) {
+            cell.feedCaptionLabel.text = "Placeholder text"
+            cell.feedImageView.image = UIImage(named: "image_placeholder")
+        } else {
+            let cellDict = posts[indexPath.row]
+            cell.feedCaptionLabel.text = cellDict["caption"] as? String
+            cell.feedImageView.file = cellDict["media"] as? PFFile
+            cell.feedImageView.loadInBackground()
+        }
+            
         return cell
     }
 
