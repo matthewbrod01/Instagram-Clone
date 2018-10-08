@@ -48,7 +48,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/iziqYuY.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -63,19 +63,10 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 Describe any challenges encountered while building the app:
 
-User persistence has been implemented in code. App delegate presents both HomeVC and
-navigation controller on app restarts.
-
-However, when a tab bar controller is added on top of navigation controller, persistence doesn't show
-HomeVC with nav bar and tab bar on app restart. Unable to implement app delegate to include both
-the tab bar and the navigation bar. This causes the log out button to disappear.
-
-Hence, user persistence is temporarily commented out to proceed with completing up the remaining
-required user stories.
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright 2018 Matthew Rodriguez
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
