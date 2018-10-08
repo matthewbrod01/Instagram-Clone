@@ -13,6 +13,7 @@ import ParseUI
 class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var posts: [PFObject] = []
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,12 +25,21 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         tableView.rowHeight = 500
         
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(HomeVC.didPullToRefresh(_:)), for: .valueChanged)
+        
+        tableView.insertSubview(refreshControl, at: 0)
+        
         fetchData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func didPullToRefresh(_ refreshControl: UIRefreshControl) {
+        fetchData()
     }
     
     // get image data from Parse database
@@ -50,6 +60,7 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             if let postsFromBackground = postsFromBackground {
                 self.posts = postsFromBackground
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             } else {
                 print(error?.localizedDescription as Any)
             }
