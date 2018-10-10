@@ -79,6 +79,9 @@ class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             if success {
                 // do something (maybe getFeed, reloadData of tableview)
                 print("Photo published.")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let tabBar = storyboard.instantiateViewController(withIdentifier: "TabBarController")
+                self.present(tabBar, animated: true, completion: nil)
             } else {
                 print("Error. Unable to publish.")
             }

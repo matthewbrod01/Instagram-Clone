@@ -111,6 +111,40 @@ class HomeVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             
         return cell
     }
-
+    
+    func UTCToLocal(UTCDateString: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a" //Input Format
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        let UTCDate = dateFormatter.date(from: UTCDateString)
+        dateFormatter.dateFormat = "yyyy-MMM-dd hh:mm:ss a" // Output Format
+        dateFormatter.timeZone = TimeZone.current
+        let UTCToCurrentFormat = dateFormatter.string(from: UTCDate!)
+        return UTCToCurrentFormat
+    }
+    
+    // set properties in DetailVC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailSegue" {
+            //_ = sender as! UIButton
+            if let indexPath = tableView.indexPathForSelectedRow {
+                print("SUCCESS")
+                // set caption label
+                let cellDict = posts[indexPath.row]
+                let detailViewController = segue.destination as! DetailVC
+                detailViewController.detailCaptionLabel.text = cellDict["caption"] as? String
+                
+                // set time stamp label
+                let date = cellDict.createdAt
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss a"
+                dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+                let stringDate = dateFormatter.string(from: date!)
+                let currentDate = self.UTCToLocal(UTCDateString: stringDate)
+                detailViewController.detailTimeStampLabel.text = currentDate
+                
+            }
+        }
+    }
 
 }

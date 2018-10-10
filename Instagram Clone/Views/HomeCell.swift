@@ -14,6 +14,7 @@ class HomeCell: UITableViewCell {
 
     @IBOutlet weak var feedImageView: PFImageView!
     @IBOutlet weak var feedCaptionLabel: UILabel!
+    @IBOutlet weak var detailButton: UIButton!
     
     /*
     var instagramPost: PFObject! {
